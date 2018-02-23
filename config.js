@@ -41,8 +41,10 @@ const config = {
             uri: {
                 $filter: 'env',
                 production: process.env.MONGODB_URI,
-                test: 'mongodb://localhost:27017/aqua-test',
-                $default: 'mongodb://localhost:27017/aqua'
+                test: process.env.MONGODB_URI_TEST,
+                $default: process.env.MONGODB_URI_DEFAULT
+                //test: 'mongodb://localhost:27017/aqua-test',
+                //$default: 'mongodb://localhost:27017/aqua'
             }
         },
         autoIndex: true
@@ -52,18 +54,18 @@ const config = {
         port: 465,
         secure: true,
         auth: {
-            user: 'jedireza@gmail.com',
+            user: 'discoodummy@gmail.com',
             pass: process.env.SMTP_PASSWORD
         }
     },
     system: {
         fromAddress: {
-            name: 'Aqua',
-            address: 'jedireza@gmail.com'
+            name: 'Talk Dater',
+            address: 'discoodummy@gmail.com'
         },
         toAddress: {
-            name: 'Aqua',
-            address: 'jedireza@gmail.com'
+            name: 'Talk Dater',
+            address: 'discoodummy@gmail.com'
         }
     }
 };
